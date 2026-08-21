@@ -1,1 +1,1 @@
-# CIS300-FALL-2026-Nellis
+# CIS300-F-26-Nellis
