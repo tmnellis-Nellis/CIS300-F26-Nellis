@@ -9,11 +9,11 @@
 }*/
 
 :root[data-theme="dark"] {
-  --text: #cfbec9;
-  --background: #13070f;
-  --primary: #c940a0;
-  --secondary: #592246;
-  --accent: #e51faa;
+    --text: #cfbec9;
+    --background: #13070f;
+    --primary: #c940a0;
+    --secondary: #592246;
+    --accent: #e51faa;
 }
 
 * {
@@ -25,7 +25,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     /*I'm not sure whether there's any regulations on fonts, but I'm a big fan of Courier.*/
-    font-family:'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 #wrapper {
@@ -38,7 +38,7 @@ h1 {
     margin-top: 0;
     margin-bottom: 0;
     /*I've included this here in case I decide to change the main font later.*/
-    font-family:'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
@@ -88,6 +88,23 @@ nav li {
     border-bottom: 1px solid var(--text);
 }
 
+nav ul ul {
+    position: absolute;
+    transform: translate(-25%);
+    background-color: var(--secondary);
+    padding: 0;
+    display: none;
+}
+
+nav ul ul li {
+    font-size: 75%;
+    border: 1px solid var(--primary);
+    display: block;
+    width: 10em;
+    padding-left: 0;
+    margin-left: 0;
+}
+
 /* Main */
 main {
     padding: 0px 20px;
@@ -125,26 +142,84 @@ footer a:hover {
     color: var(--text);
 }
 
-.container, .gallery, #vidplace{
+/* Containers and Content */
+.container, .gallery, #vidplace {
     text-align: center;
+    padding: 1em;
 }
 
 .content {
     text-align: left;
 }
 
-.gallery img{
-    width: 150px;
-    height: 150px;
+/* Images */
+
+img {
     object-fit: cover;
 }
 
-.container img{
+.gallery img {
+    width: 150px;
+    height: 150px;
+}
+
+.container img {
     max-width: 100%;
 }
 
+/* Stories */
+#stories .content a {
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+#stories .content a:hover {
+    color: var(--text);
+}
+
+/* Guestbook */
+#guestbook *, #guestbook textarea::placeholder{
+    text-align: center;
+}
+
+#guestbook textarea {
+    text-align: left;
+}
+
+input {
+    font-family: "Courier New", Courier, monospace;
+    padding: 1em;
+    width: 100%;
+    max-width: 250px;
+}
+
+input[type="submit"]{
+    color: var(--text);
+    background-color: var(--secondary);
+    border: 1px solid var(--primary);
+    max-width: 200px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 300px;
+}
+
+#notes {
+    display: grid;
+    /*I had to look up why minmax alone was causing issues. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/min*/
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); 
+    grid-gap: 2em;
+    justify-content: space-around;
+}
+
+.note {
+    padding: 1em;
+    border: 2.5px solid var(--secondary);
+}
+
 /* Tablet */
-@media (min-width: 600px){
+@media (min-width: 600px) {
     nav ul {
         display: flex;
         justify-content: space-around;
@@ -163,21 +238,33 @@ footer a:hover {
 
     .long {
         padding: 20px;
+        width: 300px;
         height: 400px;
-        object-fit: cover;
     }
 
-    /* Gallery */
-    @supports (display:flex){
+    @supports (display: flex) {
+        /* Gallery */
         .gallery {
             display: flex;
             justify-content: center;
+        }
+
+        /*Main layout applies on the story page, as it uses a smaller side image*/
+        #stories .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0px;
+        }
+
+        #stories .content {
+            flex: 1;
         }
     }
 }
 
 /* Computer */
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     #wrapper {
         margin: auto;
         width: 80%;
@@ -191,8 +278,17 @@ footer a:hover {
         padding-bottom: 0.5em;
     }
 
-    @supports (display:flex){
-        /*main layout*/
+    /*  
+    Show dropdown on hover and focus-within https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-within
+    Currently only on large devices, since smaller devices tend to be mobile and this doesn't seem to be compatible with tapping.
+    */
+    nav li:hover ul, nav li:focus-within ul {
+        display: block;
+    }
+
+    @supports (display: flex) {
+
+        /*Main Layout*/
         .container {
             display: flex;
             align-items: center;

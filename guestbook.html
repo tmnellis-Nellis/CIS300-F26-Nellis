@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>Thatcherri's Tales - Guestbook</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body  id="guestbook"><div id="wrapper">
+        <header><h1><a href="index.html">Thatcherri's Tales</a></h1></header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stories.html">Stories</a>
+                    <ul>
+                        <li><a href="liquidminutes.html">Liquid Minutes</a></li>
+                        <li><a href="template.html">Town of Manna</a></li>
+                        <li><a href="template.html">Red Gray Blue</a></li>
+                    </ul>
+                </li>
+                <li><a href="guestbook.html">Guestbook</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="container">
+                <p><a href="index.html">Home</a> &gt; <a href="guestbook.html">Guestbook</a></p>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2> Guestbook </h2>
+                    <p><i>Like what you see? Leave a note!</i></p>
+                    <!--I decided against labeling "* Required" as I think my target demographic generally knows this shorthand-->
+                    <form method="post">
+                        <label for="name">Name*</label><br>
+                        <input type="text" name="name" id="name" placeholder="Name/Username" required><br><br>
+                        <label for="name">Email*</label><br>
+                        <input type="email" name="email" id="email" placeholder="username@email.com" required><br><br>
+                        <label for="comment">Public Note*</label><br>
+                        <textarea name="comment" id="comment" rows="4" cols="40" required></textarea><br><br>
+                        <label for="notes">Private Note</label><br>
+                        <textarea name="note" id="note" rows="4" cols="40"></textarea><br><br>
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="notes" class="content">
+                    <div class="note">
+                        <p><b>Name</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="note">
+                        <p><b>Name</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="note">
+                        <p><b>Name</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="note">
+                        <p><b>Name</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="note">
+                        <p><b>Name</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="note">
+                        <p><b>Name</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="liquidminutes.html">Liquid Minutes</a></li>
+                <li><a href="template.html">Town of Manna</a></li>
+                <li><a href="template.html">Red Gray Blue</a></li>
+                <li><a href="guestbook.html">Guestbook</a></li>
+            </ul>
+            <p>&copy; 2026 Thatcherri. All Rights Reserved.</p>
+            <p>thatcherri.art@gmail.com</p>
+        </footer>
+    </div></body>
+</html>
