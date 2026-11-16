@@ -5,7 +5,7 @@
   --background: #f8ecf4;
   --primary: #bf3696;
   --secondary: #dda6ca;
-  --accent: #e01aa4;
+  --accent: #edbfdf;
 }*/
 
 :root[data-theme="dark"] {
@@ -13,7 +13,7 @@
     --background: #13070f;
     --primary: #c940a0;
     --secondary: #592246;
-    --accent: #e51faa;
+    --accent: #3F1231;
 }
 
 * {
@@ -62,12 +62,8 @@ a:hover {
 
 /* Header */
 header {
-    background-color: var(--primary);
+    background-color: var(--accent);
     text-align: center;
-}
-
-header a:hover {
-    color: var(--secondary);
 }
 
 /* Nav */
@@ -98,7 +94,7 @@ nav ul ul {
 
 nav ul ul li {
     font-size: 75%;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--accent);
     display: block;
     width: 10em;
     padding-left: 0;
@@ -125,21 +121,10 @@ footer {
 }
 
 footer ul {
+    font-size: 1.2em;
     list-style-type: none;
     margin: 0;
     padding-left: 0;
-}
-
-footer a:link {
-    color: var(--primary);
-}
-
-footer a:visited {
-    color: var(--primary);
-}
-
-footer a:hover {
-    color: var(--text);
 }
 
 /* Containers and Content */
@@ -175,6 +160,26 @@ img {
 
 #stories .content a:hover {
     color: var(--text);
+}
+
+/* Table */
+table {
+    margin: auto;
+    width: 100%;
+}
+
+td, th {
+    text-align: center;
+    padding: 1em;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tr:nth-of-type(even){
+    background-color: var(--secondary);
 }
 
 /* Guestbook */
@@ -215,6 +220,7 @@ textarea {
 
 .note {
     padding: 1em;
+    min-height: 25vh;
     border: 2.5px solid var(--secondary);
 }
 
@@ -230,6 +236,7 @@ textarea {
     }
 
     footer ul {
+        font-size: 1em;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
